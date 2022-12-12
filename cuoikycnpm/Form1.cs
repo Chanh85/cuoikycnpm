@@ -24,22 +24,29 @@ namespace cuoikycnpm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection Con = new SqlConnection(strConn);
             if (user.Text == "" || pass.Text == "")
             {
                 MessageBox.Show("Enter the user and password");
             }
             else
-            {   
-                        if (user.Text == "123" && pass.Text == "123")
-                        {
-                            ProductForm prod = new ProductForm();
-                            prod.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("if you are the admin,enter the correct id and password");
-                        }
+            {
+                Con.Open();
+                   SqlDataAdapter sda= new SqlDataAdapter("Select count(10) from tbl_user where name='"+user.Text+"' and password='"+pass.Text+"'",Con);
+                   DataTable dt = new DataTable();
+                   sda.Fill(dt);
+                if (dt.Rows[0][0].ToString()=="1")
+                {
+                    CategoryForm category= new CategoryForm();
+                    category.Show();
+                    this.Hide();
+                    Con.Close();
+                }
+                 else
+                 {
+                          MessageBox.Show("if you are the admin,enter the correct id and password");
+                 }
+                Con.Close() ;
             }
                  
         }

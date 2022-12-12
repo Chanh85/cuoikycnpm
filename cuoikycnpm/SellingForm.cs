@@ -135,10 +135,10 @@ namespace cuoikycnpm
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
 
-            e.Graphics.DrawString(" DAILYTHUCPHAMCHUCNANG ",new Font("Century Gothic",25,FontStyle.Bold),Brushes.Red,new Point(230));
-            e.Graphics.DrawString("bill id:"+billdgv.SelectedRows[0].Cells[0].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,70));
-            e.Graphics.DrawString("seller name:"+billdgv.SelectedRows[0].Cells[1].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,100));
-            e.Graphics.DrawString("date :"+billdgv.SelectedRows[0].Cells[2].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,130));
+            e.Graphics.DrawString(" BillCo.LTD ",new Font("Century Gothic",25,FontStyle.Bold),Brushes.Red,new Point(230));
+            e.Graphics.DrawString("Bill id:"+billdgv.SelectedRows[0].Cells[0].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,70));
+            e.Graphics.DrawString("Date:"+billdgv.SelectedRows[0].Cells[1].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,100));
+            e.Graphics.DrawString("User id :"+billdgv.SelectedRows[0].Cells[2].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,130));
             e.Graphics.DrawString("total amount:"+billdgv.SelectedRows[0].Cells[3].Value.ToString(),new Font("Century Gothic",20,FontStyle.Bold),Brushes.Red,new Point(100,160));
         }
 
