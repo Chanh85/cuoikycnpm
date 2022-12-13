@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace cuoikycnpm
 {
     public partial class DashBoardForm : Form
     {
+        String strConn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
         public DashBoardForm()
         {
             InitializeComponent();
@@ -67,6 +70,25 @@ namespace cuoikycnpm
         private void label15_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DashBoardForm_Load(object sender, EventArgs e)
+        {
+            SqlConnection Con = new SqlConnection(strConn);
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from tbl_user", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            stock1.Text = dt.Rows[0][0].ToString();
+            SqlDataAdapter sda1 = new SqlDataAdapter("select sum(quantity) from tbl_order", Con);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            stock2.Text = dt1.Rows[0][0].ToString();
+            SqlDataAdapter sda2 = new SqlDataAdapter("select sum(total_bill) from billtable", Con);
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            stock3.Text = dt2.Rows[0][0].ToString();
+            Con.Close();
         }
     }
 }

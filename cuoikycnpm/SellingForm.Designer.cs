@@ -41,7 +41,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.billid = new System.Windows.Forms.TextBox();
+            this.userid = new System.Windows.Forms.TextBox();
             this.sellername = new System.Windows.Forms.TextBox();
             this.productquantity = new System.Windows.Forms.TextBox();
             this.productprice = new System.Windows.Forms.TextBox();
@@ -127,13 +127,13 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // billid
+            // userid
             // 
-            this.billid.Location = new System.Drawing.Point(46, 83);
-            this.billid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.billid.Name = "billid";
-            this.billid.Size = new System.Drawing.Size(231, 27);
-            this.billid.TabIndex = 11;
+            this.userid.Location = new System.Drawing.Point(46, 83);
+            this.userid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userid.Name = "userid";
+            this.userid.Size = new System.Drawing.Size(231, 27);
+            this.userid.TabIndex = 11;
             // 
             // sellername
             // 
@@ -182,9 +182,9 @@
             this.billid1.ForeColor = System.Drawing.Color.Blue;
             this.billid1.Location = new System.Drawing.Point(46, 51);
             this.billid1.Name = "billid1";
-            this.billid1.Size = new System.Drawing.Size(72, 28);
+            this.billid1.Size = new System.Drawing.Size(88, 28);
             this.billid1.TabIndex = 11;
-            this.billid1.Text = "BILLID";
+            this.billid1.Text = "USER ID";
             this.billid1.Click += new System.EventHandler(this.billid_Click);
             // 
             // label3
@@ -566,7 +566,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.billid1);
             this.panel2.Controls.Add(this.amount);
-            this.panel2.Controls.Add(this.billid);
+            this.panel2.Controls.Add(this.userid);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.prodgv1);
             this.panel2.Controls.Add(this.button8);
@@ -863,7 +863,7 @@
         #endregion
         private PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private TextBox billid;
+        private TextBox userid;
         private TextBox sellername;
         private TextBox productquantity;
         private TextBox productprice;
